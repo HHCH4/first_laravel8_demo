@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,4 +64,7 @@ Route::prefix('admin/admin1/admin2')->group(function (){
         return 'a';
     });
 });
+
+//调用控制器方法
+Route::get('Controller',[UserController::class,'Test']);
 
