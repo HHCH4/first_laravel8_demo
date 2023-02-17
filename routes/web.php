@@ -59,12 +59,17 @@ Route::get('kexuan/{name?}',function ($name = '默认值'){
 
 
 //路由组
-Route::prefix('admin/admin1/admin2')->group(function (){
-    Route::get('a',function (){
+Route::prefix('admin/admin1/admin2')->group(function () {
+    Route::get('a', function () {
         return 'a';
     });
 });
 
 //调用控制器方法
-Route::get('Controller',[UserController::class,'Test']);
+Route::get('Controller', [UserController::class, 'Test']);
 
+//CRUD
+Route::get('insert', [UserController::class, 'insert']);
+Route::get('update', [UserController::class, 'update']);
+Route::get('select', [UserController::class, 'select']);
+Route::get('delete', [UserController::class, 'delete']);
