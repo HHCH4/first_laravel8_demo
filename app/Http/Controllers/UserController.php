@@ -60,11 +60,35 @@ class UserController extends Controller //继承基类
     public function model()
     {
         $model = new Test();
-        $list = $model->Test();
+        $list = $model->insert_1();
         if ($list > 0) {
             return View('index', compact('list'));
         } else {
             return '错误';
         }
+    }
+
+    //调用模型查询
+    public function sl2()
+    {
+        $model = new Test();
+        $list = $model->select_1();
+        return View('index', compact('list'));
+    }
+
+    //更新
+    public function up2()
+    {
+        $model = new Test();
+        $int = $model->update_1();
+        return $int;
+    }
+
+    //删除
+    public function de2()
+    {
+        $model = new Test();
+        $int = $model->delete_1();
+        return $int;
     }
 }

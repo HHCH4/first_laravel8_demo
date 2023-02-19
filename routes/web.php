@@ -112,3 +112,6 @@ Route::get('hanshu', function () {
 
 //model实例
 Route::get('modelles', [UserController::class, 'model']);
+Route::get('modelles1', [UserController::class, 'sl2']);
+Route::get('modelles2', [UserController::class, 'up2']);
+Route::get('modelles3', [UserController::class, 'de2']);

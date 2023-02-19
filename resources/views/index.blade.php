@@ -14,4 +14,8 @@
 {{--    <a>没进入循环</a>--}}
 {{--@endif--}}
 
-<a>{{$list}}</a>
+{{--<a>{{$list}}</a>--}}
+
+@foreach($list as $val)
+    <a>{{$val->name}}</a>
+@endforeach
