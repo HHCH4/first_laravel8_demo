@@ -110,4 +110,5 @@ Route::get('hanshu', function () {
     return View('index', compact('time'));
 });
 
-//
+//model实例
+Route::get('modelles', [UserController::class, 'model']);

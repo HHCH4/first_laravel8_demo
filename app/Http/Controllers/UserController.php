@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use App\Models\Test;
+
+
 //artison创建控制器类
 //php artisan make:controller 控制器名称
 class UserController extends Controller //继承基类
@@ -51,5 +54,17 @@ class UserController extends Controller //继承基类
         return DB::table('test')
             ->where('id', '2')
             ->delete();
+    }
+
+    //调用模型
+    public function model()
+    {
+        $model = new Test();
+        $list = $model->Test();
+        if ($list > 0) {
+            return View('index', compact('list'));
+        } else {
+            return '错误';
+        }
     }
 }
