@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 //artison创建控制器类
 //php artisan make:controller 控制器名称
 class UserController extends Controller //继承基类
@@ -36,12 +37,12 @@ class UserController extends Controller //继承基类
     //查询数据
     public function select()
     {
-//        $user = DB::table('test')
-//            ->get();
-//        dump(die($user));
+        $list = DB::table('test')
+            ->get();
+        return View('index', compact('list'));
 
-        $user = DB::select('select * from test');
-        dd($user);
+//        $user = DB::select('select * from test');
+//        dd($user);
     }
 
     //删除数据

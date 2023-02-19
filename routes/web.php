@@ -103,3 +103,11 @@ Route::get('Test2', function () {
         echo '视图不存在';
     };
 });
+
+//函数案例
+Route::get('hanshu', function () {
+    $time = strtotime(now());
+    return View('index', compact('time'));
+});
+
+//
