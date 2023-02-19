@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\View;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +73,33 @@ Route::get('insert', [UserController::class, 'insert']);
 Route::get('update', [UserController::class, 'update']);
 Route::get('select', [UserController::class, 'select']);
 Route::get('delete', [UserController::class, 'delete']);
+
+
+//调用
+Route::get("views", function () {
+    return view('index');
+});
+
+//数组传值
+Route::get('array/{title?}', function ($title = '我是标题') {
+    return view('index', ['title' => $title]);
+});
+
+//with传值
+Route::get('with/{title?}', function ($title = '标题2') {
+    return view('index')->with('title', $title);
+});
+
+//compact
+Route::get('compact/{title?}', function ($title = '标题2', $name = '我是name') {
+    return view('index', compact('title', 'name'));
+});
+
+//判断视图文件是否存在
+Route::get('Test2', function () {
+    if (View::exists('index')) {
+        echo '视图存在';
+    } else {
+        echo '视图不存在';
+    };
+});
