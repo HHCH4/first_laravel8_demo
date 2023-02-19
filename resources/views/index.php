@@ -1,2 +1,2 @@
-<a>i php</a>
-<?php echo $title ?>
+<!--<a>i php</a>-->
+<?php //echo title ?>

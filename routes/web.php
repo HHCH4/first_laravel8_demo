@@ -115,3 +115,11 @@ Route::get('modelles', [UserController::class, 'model']);
 Route::get('modelles1', [UserController::class, 'sl2']);
 Route::get('modelles2', [UserController::class, 'up2']);
 Route::get('modelles3', [UserController::class, 'de2']);
+
+//分页数据
+Route::get('page_1', function () {
+    return View('index');
+});
+
+//分页
+Route::get('page1', [UserController::class, 'page_1']);

@@ -38,4 +38,10 @@ class Test extends Model
         return $this->where('id', 1)
             ->delete();
     }
+
+    //分页
+    public function page_1()
+    {
+        return $this->paginate(3);
+    }
 }

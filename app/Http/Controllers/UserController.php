@@ -91,4 +91,13 @@ class UserController extends Controller //继承基类
         $int = $model->delete_1();
         return $int;
     }
+
+    //分页
+    public function page_1()
+    {
+        $model = new Test();
+        $list = $model->page_1();
+        return View('index', compact('list'));
+    }
+
 }
